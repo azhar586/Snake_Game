@@ -5,8 +5,6 @@ const finalScore = document.getElementById("finalScore");
 const newGameBtn = document.getElementById("newGameBtn");
 const highScoreDisplay = document.getElementById("high-score");
 
-canvas.width = 400;
-canvas.height = 400;
 const box = 20;
 let snake = [{ x: 200, y: 200 }];
 let direction = "RIGHT";
@@ -14,6 +12,17 @@ let food = generateFood();
 let score = 0;
 let highScore = 0;
 let gameInterval;
+
+// Dynamically set canvas size based on window width
+const resizeCanvas = () => {
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    canvas.width = Math.min(screenWidth, 400);  // Max width 400px, but adapts to smaller screens
+    canvas.height = Math.min(screenHeight, 400); // Max height 400px, but adapts to smaller screens
+};
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 function drawGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -77,7 +86,7 @@ function startGame() {
     snake = [{ x: 200, y: 200 }];
     direction = "RIGHT";
     score = 0;
-    gameInterval = setInterval(drawGame, 200); // Slow speed
+    gameInterval = setInterval(drawGame, 300); // Slower speed
 }
 
 // Keyboard controls
@@ -105,3 +114,4 @@ document.getElementById("right").addEventListener("click", () => {
 newGameBtn.addEventListener("click", startGame);
 
 startGame();
+
