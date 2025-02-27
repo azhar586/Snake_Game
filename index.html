@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🐍 Snake Game</h1>
+        <p id="high-score">High Score: 0</p>
+        <canvas id="gameCanvas"></canvas>
+        <div id="gameOverScreen">
+            <h2>Game Over!</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="newGameBtn">New Game</button>
+        </div>
+
+        <!-- Neatly arranged touch controls -->
+        <div class="controls">
+            <div class="row">
+                <button id="up">▲</button>
+            </div>
+            <div class="row">
+                <button id="left">◄</button>
+                <button id="right">►</button>
+            </div>
+            <div class="row">
+                <button id="down">▼</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
