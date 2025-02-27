@@ -17,6 +17,10 @@ canvas {
     background-color: black;
     border: 3px solid #00ff00;
     margin-top: 20px;
+    max-width: 90%; /* Adjust for smaller screens */
+    max-height: 90%;
+    width: 400px;  /* Default width */
+    height: 400px; /* Default height */
 }
 
 #gameOverScreen {
